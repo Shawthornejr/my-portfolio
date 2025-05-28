@@ -1,11 +1,13 @@
+import React from 'react';
+import './App.css';
+import AboutMe from './components/AboutMe'; // ✅ Make sure the path matches your folder
+
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This site is built with React!</p>
+      <AboutMe />
     </div>
   );
 }
 
 export default App;
-
