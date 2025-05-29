@@ -1,5 +1,11 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 2rem 1rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
