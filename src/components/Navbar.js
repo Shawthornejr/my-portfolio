@@ -17,7 +17,8 @@ function Navbar() {
   return (
     <nav className="navbar">
   <div className="logo-container">
-    <img src="/logo.png" alt="Samuel Hawthorne Logo" className="logo-img" />
+   <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="logo-img" />
+
     <h1 className="logo-text">Samuel Hawthorne</h1>
   </div>
 
