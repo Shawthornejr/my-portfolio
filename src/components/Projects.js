@@ -28,11 +28,26 @@ function Projects() {
       <h2>Projects</h2>
       <div className="project-grid">
         {projectList.map((project, index) => (
-          <div className="project-card" key={index} data-aos="fade-up">
-            <img src={process.env.PUBLIC_URL + project.image} alt={project.title} />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+          <div className="laptop-wrapper" key={index} data-aos="fade-up">
+            <div className="laptop-frame">
+              <img
+                src={process.env.PUBLIC_URL + project.image}
+                alt={project.title}
+                className="laptop-screen"
+              />
+            </div>
+            <div className="laptop-base"></div>
+            <div className="project-card">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </a>
+            </div>
           </div>
         ))}
       </div>

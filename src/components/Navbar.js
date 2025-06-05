@@ -1,40 +1,28 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMobile(!isMobile);
-  };
-
-  const closeMenu = () => {
-    setIsMobile(false);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="navbar">
-  <div className="logo-container">
-   <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="logo-img" />
+      <div className="logo">Samuel Hawthorne</div>
 
-    <h1 className="logo-text">Samuel Hawthorne</h1>
-  </div>
+      <div className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <a href="#about" onClick={toggleMenu}>About</a>
+        <a href="#projects" onClick={toggleMenu}>Projects</a>
+        <a href="#contact" onClick={toggleMenu}>Contact</a>
+      </div>
 
-  <ul className={isMobile ? 'nav-links-mobile' : 'nav-links'}>
-    <li><a href="#about" onClick={closeMenu}>About</a></li>
-    <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-    <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-  </ul>
-
-  <button className="mobile-menu-icon" onClick={toggleMenu}>
-    <FontAwesomeIcon icon={isMobile ? faTimes : faBars} />
-  </button>
-</nav>
+      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div className="bar" />
+        <div className="bar" />
+        <div className="bar" />
+      </div>
+    </nav>
   );
 }
 
 export default Navbar;
-
-

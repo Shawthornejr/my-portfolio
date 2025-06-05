@@ -1,14 +1,14 @@
 import React from 'react';
-import './AboutMe.css'; // Import the CSS file for styling
+import './AboutMe.css';
 
 function AboutMe() {
   return (
-    <section className="about-me">
-    <img 
-  src={`${process.env.PUBLIC_URL}/profile.jpg`} 
-  alt="Profile of Samuel Hawthorne"
-  className="about-me__image"
-/>
+    <section className="about-me" id="about" data-aos="fade-up">
+      <img 
+        src={`${process.env.PUBLIC_URL}/profile.jpg`} 
+        alt="Profile of Samuel Hawthorne"
+        className="about-me__image"
+      />
       <div className="about-me__text">
         <h2>Hi, I'm Samuel Hawthorne</h2>
         <p>

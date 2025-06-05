@@ -1,92 +1,119 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #24292e;
-  color: #fff;
-  padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  list-style: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile menu icon */
-.mobile-menu-icon {
+.hamburger {
   display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
+  z-index: 1100;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
-.logo-img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  color: white;
-  margin: 0;
-}
-
-
-/* Mobile Styles */
+/* Mobile View */
 @media (max-width: 768px) {
   .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #111;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links.open a {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+/* Optional: Hide navbar on large screens if using a sidebar */
+@media (min-width: 769px) {
+  .navbar {
     display: none;
   }
+}
 
-  .nav-links-mobile {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    background-color: #24292e;
-    padding: 1rem 0;
-    list-style: none;
-    text-align: center;
-    gap: 1rem;
+/* ✅ Keyframe Animations */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  .nav-links-mobile a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .mobile-menu-icon {
-    display: block;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

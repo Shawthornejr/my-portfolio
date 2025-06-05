@@ -1,0 +1,77 @@
+.hero {
+  height: 100vh;
+  background-color: var(--bg); /* Uses dark background from App.css */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-name {
+  font-size: 2.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.2rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 6.0rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: var(--highlight); /* Gold highlight */
+  font-family: 'Georgia', serif;
+}
+
+.hero-title .plus {
+  color: var(--accent); /* Softer contrast */
+  font-weight: normal;
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  border: 2px solid var(--highlight);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: var(--highlight);
+  color: var(--bg);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-cta {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
