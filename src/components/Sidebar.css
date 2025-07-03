@@ -44,7 +44,7 @@
   color: var(--highlight, #f9c58d);
 }
 .sidebar a.active {
-  color: var(--highlight, #f9c58d); /* your accent color */
+  color: var(--highlight, #f9c58d); /*  accent color */
   font-weight: bold;
   position: relative;
 }

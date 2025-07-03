@@ -18,8 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar /> {/* ✅ Always visible fixed nav on the left */}
-
+      <Sidebar /> 
       <main className="main-content"> 
         <Navbar />
 <Hero />
